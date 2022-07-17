@@ -11,6 +11,9 @@ import UploadRoute from './Routes/UploadRoute.js';
 
 const app = express();
 
+// to serve images inside public folder
+app.use(express.static('public')); 
+app.use('/images', express.static('images'));
 
 // Middleware
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
@@ -32,5 +35,5 @@ mongoose.connect(process.env.MONGO_DB , {
 // usage of routes
 app.use('/auth', AuthRoute)
 app.use('/user', UserRoute)
-app.use('/post', PostRoute)
+app.use('/posts', PostRoute)
 app.use('/upload', UploadRoute)
