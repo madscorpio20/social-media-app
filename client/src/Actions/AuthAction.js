@@ -25,5 +25,10 @@ export const logIn = (formData, navigate) => async (dispatch) => {
     }
   };
 
+  
+export const logout = ()=> async(dispatch)=> {
+  dispatch({type: "LOG_OUT"})
+}
+
 
   
